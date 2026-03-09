@@ -77,3 +77,6 @@ DerivedDataCache/*
 
 #environmental variables from python (dotenv)
 *.env
+
+#java class files
+*.class
