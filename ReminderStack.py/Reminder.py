@@ -31,7 +31,6 @@ root.grid_rowconfigure(0, weight=1)
 
 
 
-# LEFT PANEL
 left_panel = tk.Frame(root, bg="#f5f5f5")
 left_panel.grid(row=0, column=0, sticky="nsew")
 canvas = tk.Canvas(left_panel, bg="#f5f5f5", highlightthickness=0)
@@ -58,11 +57,11 @@ canvas.configure(yscrollcommand=scrollbar.set)
 canvas.pack(side="left", fill="both", expand=True)
 scrollbar.pack(side="right", fill="y")
 
-# RIGHT PANEL
+
 right_panel = tk.Frame(root, bg="#e2e2e2")
 right_panel.grid(row=0, column=1, sticky="nsew")
 
-# Inside right panel
+
 control_frame = tk.Frame(right_panel, bg="#e2e2e2")
 control_frame.pack(fill="x", padx=15, pady=10)
 
@@ -144,11 +143,11 @@ def create_reminder(parent, reminder_id, title, time_set, description=""):
     card.pack(fill="x", padx=20, pady=12)
     card.pack_propagate(False)
 
-    # LEFT SIDE CONTENT
+    
     content = tk.Frame(card, bg="white")
     content.pack(side="left", padx=20, pady=10, anchor="w")
 
-    # TITLE
+    
     title_label = tk.Label(
         content,
         text=title,
@@ -157,7 +156,7 @@ def create_reminder(parent, reminder_id, title, time_set, description=""):
     )
     title_label.pack(anchor="w")
 
-    # DESCRIPTION
+    
     desc_label = tk.Label(
         content,
         text=description,
@@ -167,11 +166,11 @@ def create_reminder(parent, reminder_id, title, time_set, description=""):
     )
     desc_label.pack(anchor="w")
 
-    # RIGHT SIDE TIME AREA
+    
     time_area = tk.Frame(card, bg="white")
     time_area.pack(side="right", padx=20, pady=10)
 
-    # TIME LEFT
+
     time_left = tk.Label(
         time_area,
         text=get_remaining_time(time_set),
@@ -180,7 +179,7 @@ def create_reminder(parent, reminder_id, title, time_set, description=""):
     )
     time_left.pack()
 
-    # SET TIME
+    
     set_time = tk.Label(
         time_area,
         text=time_set,
@@ -190,7 +189,7 @@ def create_reminder(parent, reminder_id, title, time_set, description=""):
     )
     set_time.pack(pady=(5,0))
 
-    # Hover bindings
+    
     for widget in [card, title_label, desc_label, time_left, set_time]:
         widget.bind("<Enter>", on_enter)
         widget.bind("<Leave>", on_leave)
